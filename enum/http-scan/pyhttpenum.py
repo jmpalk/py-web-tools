@@ -52,7 +52,7 @@ def log_string(response,url):
         redirect = response.next
     else:
         redirect = ""
-    return f"{url},{response.status_code},{server},{xpower},{length},{redirect},{comment}\n"
+    return f"{url},{response.status_code},{server},{xpower},{sts},{xfo},{csp},{length},{redirect},{comment}\n"
 
 def main():
     if len(sys.argv)!=3:
