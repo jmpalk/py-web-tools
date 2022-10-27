@@ -36,6 +36,18 @@ def log_string(response,url):
         length = response.headers['Content-Length']
     else:
         length = ""
+    if "Strict-Transport-Security" in response.headers:
+        sts = "STS"
+    else:
+        sts = "No-STS"
+    if "X-Frame-Options" in response.headers:
+        xfo = "XFO"
+    else:
+        xfo = "No-XFO"
+    if "Content-Security-Policy" in response.headers:
+        csp = "CSP"
+    else:
+        csp = "No-CSP"
     if response.next is not None:
         redirect = response.next
     else:
